@@ -1,9 +1,5 @@
 # Plataforma de Gestión de Cursos e Inscripciones
-
-Proyecto integrador del curso **Programación Web II** (ISIL) — Evaluación Integral Final.
-
-> ⚠️ Antes de entregar: reemplaza todos los campos marcados como `___` (integrantes, URLs
-> desplegadas, credenciales reales, enlace de YouTube). Este README es la base, no el final.
+Evaluación Integral Final.
 
 ## 1. Descripción y problema que resuelve
 
@@ -142,42 +138,34 @@ Cada carpeta tiene su `.env.example`, ninguna tiene el `.env` real subido al rep
 
 Colección completa lista para importar en Postman: [`docs/postman_collection.json`](docs/postman_collection.json).
 
+
 ## 10. URLs desplegadas
 
 | Frontend/Backend | URL |
-|---|---|
-| Vista pública (Next.js) | https://______________.vercel.app |
-| Portal del estudiante (React) | https://______________.vercel.app |
-| Panel administrativo (Angular) | https://______________.vercel.app |
-| API (Render) | https://______________.onrender.com |
+
+| Vista pública (Next.js) | https://evaluacion-integral-pwa.vercel.app |
+| Portal del estudiante (React) | https://evaluacion-integral-pwa-6n91.vercel.app |
+| Panel administrativo (Angular) | https://evaluacion-integral-pwa-1tzv.vercel.app |
+| API (Render) | https://evaluacionintegralpwa.onrender.com |
+
+| Rol | Email | Contraseña |
+
+| Administrador | admin@gmail.com | admin123 |
+| Estudiante | danfer@gmail.com | danfer123 |
 
 Guía paso a paso para desplegar: [`docs/despliegue.md`](docs/despliegue.md).
 
-## 11. Capturas de pantalla
+## 11. Video de exposición
 
-> Agregar aquí 3-4 capturas: catálogo público, login, panel admin (cursos), panel admin (usuarios).
+Enlace de YouTube: 
 
-## 12. Video de exposición
+## 12. Estructura del repositorio
 
-Enlace de YouTube (no listado o público): https://youtu.be/______________
-
-## 13. Documentación técnica adicional
-
-- [Arquitectura](docs/arquitectura.md)
-- [Modelo de datos](docs/modelo-de-datos.md)
-- [Checklist de seguridad](docs/checklist-seguridad.md)
-- [Reporte Lighthouse](docs/lighthouse-report.md)
-- [Guía de despliegue](docs/despliegue.md)
-- [Flujo de trabajo en Git](docs/flujo-de-trabajo-git.md)
-- [Colección Postman](docs/postman_collection.json)
-
-## 14. Estructura del repositorio
-
-```
-.
 ├── backend/            # API REST (Node + Express + MongoDB)
 ├── frontend-react/     # Portal del estudiante (SPA)
 ├── frontend-next/      # Vista pública (SSR)
 ├── frontend-angular/   # Panel administrativo
 └── docs/                # Documentación técnica
-```
+
+
+
