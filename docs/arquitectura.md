@@ -36,21 +36,13 @@ flowchart LR
 
 ## Por qué se dividió en 3 frontends
 
-Cada frontend cumple un propósito distinto pedido por la rúbrica del curso:
+Este proyecto utiliza tres aplicaciones porque cada una está pensada para un tipo de usuario diferente.
 
-- **Next.js**: se usa para la vista pública porque necesitábamos SSR (los cursos se
-  renderizan en el servidor en cada request con `cache: "no-store"`), así cualquier
-  visitante ve el catálogo actualizado sin loguearse y sin esperar a que cargue JS en el navegador.
-- **React**: es la SPA del estudiante. Aquí sí tiene sentido manejar estado en el cliente
-  (Context API para la sesión) porque el usuario interactúa bastante (inscribirse, ver su cuenta).
-- **Angular**: se usa solo para el panel admin, separado de la app del estudiante, con
-  formularios reactivos y guards que restringen el acceso solo a rol `administrador`.
+Next.js muestra el catálogo público de cursos sin necesidad de iniciar sesión.
+React es el portal del estudiante, donde puede inscribirse, consultar sus cursos y administrar su cuenta.
+Angular está destinado al panel de administración, desde donde se gestionan usuarios y cursos.
+
+De esta forma, cada aplicación tiene una responsabilidad clara y el proyecto resulta más organizado y fácil de mantener.
 
 ## Autenticación y autorización
-
-1. El usuario envía `email`/`password` a `POST /api/auth/login`.
-2. El backend valida con `bcrypt.compare` y firma un JWT con `{ id, nombre, rol }`.
-3. El token se guarda en `localStorage` en cada frontend (React: `AuthContext`, Angular: `AuthService`).
-4. Cada request protegido manda `Authorization: Bearer <token>`.
-5. `auth.middleware.js` verifica el token; `role.middleware.js` verifica que el rol tenga permiso
-   para la ruta (ej: solo `administrador` puede crear/editar/eliminar cursos y usuarios).
+La autenticación se realiza mediante JWT. Cuando el usuario inicia sesión, el backend valida sus credenciales y genera un token que se almacena en el navegador. Ese token se envía en cada petición protegida y el servidor verifica tanto la identidad del usuario como su rol, permitiendo que solo los administradores accedan a las funciones de gestión.
