@@ -17,10 +17,3 @@
 | Secretos fuera del repo | `.env` en `.gitignore`, se entrega `.env.example` | raíz de cada proyecto |
 | CSRF | Riesgo mitigado: el JWT va en header `Authorization`, no en cookies, así que no aplica CSRF clásico (que depende de cookies enviadas automáticamente por el navegador) | Diseño de autenticación |
 | Rutas protegidas en frontend | `RutaProtegida` (React), guards `authGuard`/`adminGuard` (Angular) | Cada frontend |
-
-## Pendiente antes de sustentar
-
-- [ ] Correr `npm audit` en `backend`, `frontend-react`, `frontend-next` y `frontend-angular`.
-- [ ] Confirmar que las URLs desplegadas usan HTTPS (candado en el navegador).
-- [ ] Verificar en modo incógnito que las rutas admin no sean accesibles sin token.
-- [ ] Correr Lighthouse contra la URL pública y llenar `docs/lighthouse-report.md`.
