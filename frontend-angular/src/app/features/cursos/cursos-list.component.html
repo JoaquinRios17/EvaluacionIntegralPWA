@@ -1,0 +1,72 @@
+<div class="contenedor">
+  <div style="display:flex; justify-content:space-between; align-items:center;">
+    <h2>Cursos</h2>
+    <button class="btn btn-primario" (click)="abrirFormularioNuevo()">+ Nuevo curso</button>
+  </div>
+
+  <div class="error" *ngIf="errorMensaje">{{ errorMensaje }}</div>
+
+  <div class="tarjeta" *ngIf="mostrarFormulario">
+    <h3>{{ editandoId ? 'Editar curso' : 'Nuevo curso' }}</h3>
+    <form [formGroup]="formulario" (ngSubmit)="guardar()">
+      <label>Nombre</label>
+      <input formControlName="nombre" placeholder="Ej: Programacion Web II" />
+      <div class="error" *ngIf="formulario.get('nombre')?.touched && formulario.get('nombre')?.invalid">
+        El nombre es obligatorio (max 100 caracteres)
+      </div>
+
+      <label>Descripcion</label>
+      <textarea formControlName="descripcion" rows="3" placeholder="Descripcion breve del curso"></textarea>
+      <div class="error" *ngIf="formulario.get('descripcion')?.touched && formulario.get('descripcion')?.invalid">
+        La descripcion es obligatoria (max 500 caracteres)
+      </div>
+
+      <div style="display:flex; gap:1rem;">
+        <div style="flex:1;">
+          <label>Creditos</label>
+          <input type="number" formControlName="creditos" min="1" max="10" />
+        </div>
+        <div style="flex:1;">
+          <label>Cupo maximo</label>
+          <input type="number" formControlName="cupoMaximo" min="1" />
+        </div>
+      </div>
+
+      <div style="display:flex; gap:0.75rem;">
+        <button type="submit" class="btn btn-primario">Guardar</button>
+        <button type="button" class="btn btn-secundario" (click)="cancelar()">Cancelar</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="tarjeta">
+    <p *ngIf="cargando">Cargando cursos...</p>
+
+    <table *ngIf="!cargando">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Creditos</th>
+          <th>Cupo</th>
+          <th>Estado</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let curso of cursos">
+          <td>{{ curso.nombre }}</td>
+          <td>{{ curso.creditos }}</td>
+          <td>{{ curso.cupoMaximo }}</td>
+          <td>{{ curso.estado }}</td>
+          <td style="display:flex; gap:0.5rem;">
+            <button class="btn btn-secundario" (click)="editar(curso)">Editar</button>
+            <button class="btn btn-peligro" (click)="eliminar(curso)">Eliminar</button>
+          </td>
+        </tr>
+        <tr *ngIf="cursos.length === 0">
+          <td colspan="5">No hay cursos registrados todavia.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

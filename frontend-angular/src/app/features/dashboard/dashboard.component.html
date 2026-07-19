@@ -1,0 +1,15 @@
+<div class="contenedor">
+  <h2>Bienvenido, {{ authService.usuarioActual()?.nombre }}</h2>
+  <p style="color:#6b7280;">Desde aqui puedes administrar los cursos y los usuarios de la plataforma.</p>
+
+  <div style="display:flex; gap:1rem; margin-top:1.5rem;">
+    <a routerLink="/cursos" class="tarjeta" style="flex:1; text-decoration:none; color:inherit;">
+      <h3>Cursos</h3>
+      <p style="color:#6b7280; font-size:0.9rem;">Crear, editar y eliminar cursos del catalogo.</p>
+    </a>
+    <a routerLink="/usuarios" class="tarjeta" style="flex:1; text-decoration:none; color:inherit;">
+      <h3>Usuarios</h3>
+      <p style="color:#6b7280; font-size:0.9rem;">Gestionar cuentas de estudiantes, docentes y admins.</p>
+    </a>
+  </div>
+</div>

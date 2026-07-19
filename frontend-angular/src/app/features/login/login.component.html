@@ -1,0 +1,28 @@
+<div class="contenedor" style="max-width:420px; margin-top:4rem;">
+  <div class="tarjeta">
+    <h2>Acceso administrativo</h2>
+    <p style="color:#6b7280; font-size:0.9rem;">
+      Ingresa con una cuenta con rol de administrador o docente.
+    </p>
+
+    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+      <label>Correo</label>
+      <input type="email" formControlName="email" placeholder="admin@cursos.com" />
+      <div class="error" *ngIf="formulario.get('email')?.touched && formulario.get('email')?.invalid">
+        Ingresa un correo valido
+      </div>
+
+      <label>Contraseña</label>
+      <input type="password" formControlName="password" placeholder="********" />
+      <div class="error" *ngIf="formulario.get('password')?.touched && formulario.get('password')?.invalid">
+        La contraseña debe tener al menos 6 caracteres
+      </div>
+
+      <div class="error" *ngIf="errorMensaje">{{ errorMensaje }}</div>
+
+      <button type="submit" class="btn btn-primario" [disabled]="cargando" style="width:100%;">
+        {{ cargando ? 'Ingresando...' : 'Ingresar' }}
+      </button>
+    </form>
+  </div>
+</div>

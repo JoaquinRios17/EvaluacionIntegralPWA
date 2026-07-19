@@ -1,0 +1,12 @@
+<nav *ngIf="authService.usuarioActual() as usuario" style="background:#111827; color:#fff; padding:0.75rem 1.5rem; display:flex; justify-content:space-between; align-items:center;">
+  <div style="display:flex; gap:1.25rem; align-items:center;">
+    <strong>Panel Admin - Gestion de Cursos</strong>
+    <a routerLink="/dashboard" style="color:#fff;">Inicio</a>
+    <a routerLink="/cursos" style="color:#fff;">Cursos</a>
+    <a routerLink="/usuarios" style="color:#fff;">Usuarios</a>
+  </div>
+  <div style="display:flex; gap:0.75rem; align-items:center;">
+    <span>{{ usuario.nombre }} ({{ usuario.rol }})</span>
+    <button class="btn btn-secundario" (click)="cerrarSesion()">Cerrar sesion</button>
+  </div>
+</nav>

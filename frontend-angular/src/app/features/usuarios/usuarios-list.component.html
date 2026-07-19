@@ -1,0 +1,65 @@
+<div class="contenedor">
+  <div style="display:flex; justify-content:space-between; align-items:center;">
+    <h2>Usuarios</h2>
+    <button class="btn btn-primario" (click)="abrirFormularioNuevo()">+ Nuevo usuario</button>
+  </div>
+
+  <div class="error" *ngIf="errorMensaje">{{ errorMensaje }}</div>
+
+  <div class="tarjeta" *ngIf="mostrarFormulario">
+    <h3>{{ editandoId ? 'Editar usuario' : 'Nuevo usuario' }}</h3>
+    <form [formGroup]="formulario" (ngSubmit)="guardar()">
+      <label>Nombre</label>
+      <input formControlName="nombre" placeholder="Nombre completo" />
+
+      <label>Correo</label>
+      <input type="email" formControlName="email" placeholder="correo@ejemplo.com" [readonly]="!!editandoId" />
+
+      <div *ngIf="!editandoId">
+        <label>Contraseña</label>
+        <input type="password" formControlName="password" placeholder="Minimo 6 caracteres" />
+      </div>
+
+      <label>Rol</label>
+      <select formControlName="rol">
+        <option value="estudiante">Estudiante</option>
+        <option value="docente">Docente</option>
+        <option value="administrador">Administrador</option>
+      </select>
+
+      <div style="display:flex; gap:0.75rem;">
+        <button type="submit" class="btn btn-primario">Guardar</button>
+        <button type="button" class="btn btn-secundario" (click)="cancelar()">Cancelar</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="tarjeta">
+    <p *ngIf="cargando">Cargando usuarios...</p>
+
+    <table *ngIf="!cargando">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Correo</th>
+          <th>Rol</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let usuario of usuarios">
+          <td>{{ usuario.nombre }}</td>
+          <td>{{ usuario.email }}</td>
+          <td>{{ usuario.rol }}</td>
+          <td style="display:flex; gap:0.5rem;">
+            <button class="btn btn-secundario" (click)="editar(usuario)">Editar</button>
+            <button class="btn btn-peligro" (click)="eliminar(usuario)">Eliminar</button>
+          </td>
+        </tr>
+        <tr *ngIf="usuarios.length === 0">
+          <td colspan="4">No hay usuarios registrados todavia.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
