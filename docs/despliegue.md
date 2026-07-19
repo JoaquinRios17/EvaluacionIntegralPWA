@@ -1,11 +1,5 @@
 # Guía de despliegue paso a paso
 
-Orden recomendado: **1) MongoDB Atlas → 2) Backend en Render → 3) Frontends en Vercel.**
-Así, cuando despliegues los frontends ya tienes la URL real del backend para poner en las
-variables de entorno.
-
----
-
 ## 1. MongoDB Atlas
 
 1. Crea una cuenta en https://www.mongodb.com/cloud/atlas y crea un **cluster gratuito (M0)**.
@@ -76,12 +70,3 @@ variables de entorno.
    CORS_ORIGINS=https://gestion-cursos-publico.vercel.app,https://gestion-cursos-estudiante.vercel.app,https://gestion-cursos-admin.vercel.app
    ```
 3. Guarda: Render va a redesplegar el servicio automáticamente.
-
-## 7. Verificación final (checklist rápido)
-
-- [ ] Abrir cada URL de Vercel en **ventana de incógnito** y probar que carga.
-- [ ] Hacer login en React y en Angular con una cuenta real creada en Atlas.
-- [ ] Confirmar que un usuario `estudiante` no puede entrar al panel Angular (debe
-      redirigir a `/login` por el `adminGuard`).
-- [ ] Revisar en la consola del navegador que no haya errores de CORS.
-- [ ] Confirmar que ningún `.env` real quedó subido a GitHub (solo `.env.example`).
