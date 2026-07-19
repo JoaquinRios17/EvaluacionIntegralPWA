@@ -48,11 +48,10 @@ MongoDB Atlas     -> persistencia (users, courses, enrollments)       -> Atlas
 ## 5. Integrantes del equipo
 
 | Nombre completo | Rol / parte principal del proyecto | Usuario de GitHub |
-|---|---|---|
-| ___________________ | Backend y seguridad | @________ |
-| ___________________ | Panel Angular | @________ |
-| ___________________ | Portal React | @________ |
-| ___________________ | Next.js y documentación | @________ |
+| Hector Joaquin Rios Hinostroza | Backend y seguridad | https://github.com/JoaquinRios17 |
+| -------------- | Panel Angular | @________ |
+| ---------------- | Portal React | @________ |
+| ------------ | Next.js y documentación | @________ |
 
 ## 6. Instalación y ejecución local
 
@@ -83,7 +82,7 @@ npm run dev               # http://localhost:5173
 cd frontend-next
 cp .env.example .env
 npm install
-npm run dev               # http://localhost:3000 (usa otro puerto si el backend ya usa el 3000, ej: npm run dev -- -p 3001)
+npm run dev               # http://localhost:3000
 ```
 
 ### Frontend Angular (panel admin)
@@ -97,7 +96,6 @@ npm start                 # http://localhost:4200
 ## 7. Variables de entorno
 
 | Proyecto | Variable | Ejemplo |
-|---|---|---|
 | backend | `MONGODB_URI` | `mongodb+srv://usuario:pass@cluster.mongodb.net/gestion_cursos` |
 | backend | `JWT_SECRET` | cadena aleatoria larga |
 | backend | `CORS_ORIGINS` | URLs de los 3 frontends separadas por coma |
@@ -109,18 +107,13 @@ Cada carpeta tiene su `.env.example`, ninguna tiene el `.env` real subido al rep
 
 ## 8. Credenciales de prueba
 
-> Crea estos usuarios manualmente (vía `POST /api/auth/registro` o desde el panel Angular
-> una vez tengas un primer admin) y reemplaza aquí los datos reales antes de entregar.
-
 | Rol | Email | Contraseña |
-|---|---|---|
-| Administrador | admin@cursos.com | ______ |
-| Estudiante | estudiante@cursos.com | ______ |
+| Administrador | admin@gmail.com | admin123 |
+| Estudiante | danfer@gmail.com | danfer123 |
 
 ## 9. Endpoints principales de la API
 
 | Método | Ruta | Protección | Descripción |
-|---|---|---|---|
 | POST | `/api/auth/registro` | pública | Crea un usuario |
 | POST | `/api/auth/login` | pública | Login, devuelve JWT |
 | GET | `/api/auth/perfil` | JWT | Perfil del usuario logueado |
@@ -155,11 +148,18 @@ Colección completa lista para importar en Postman: [`docs/postman_collection.js
 
 Guía paso a paso para desplegar: [`docs/despliegue.md`](docs/despliegue.md).
 
-## 11. Video de exposición
+## 11. Capturas de pantalla
+
+<img width="1917" height="618" alt="image" src="https://github.com/user-attachments/assets/8ec41a04-de25-4de3-9af6-559aa607ea33" />
+<img width="1867" height="823" alt="image" src="https://github.com/user-attachments/assets/665045ed-4efc-48b6-9afa-aac60efb8698" />
+<img width="1915" height="578" alt="image" src="https://github.com/user-attachments/assets/ebe3adc3-75a5-4350-b693-ae4473ef074e" />
+
+
+## 12. Video de exposición
 
 Enlace de YouTube: 
 
-## 12. Estructura del repositorio
+## 13. Estructura del repositorio
 
 ├── backend/            # API REST (Node + Express + MongoDB)
 ├── frontend-react/     # Portal del estudiante (SPA)
