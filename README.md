@@ -49,9 +49,9 @@ MongoDB Atlas     -> persistencia (users, courses, enrollments)       -> Atlas
 
 | Nombre completo | Rol / parte principal del proyecto | Usuario de GitHub |
 | Hector Joaquin Rios Hinostroza | Backend y seguridad | https://github.com/JoaquinRios17 |
-| -------------- | Panel Angular | @________ |
+| | Panel Angular | @________ |
 | ---------------- | Portal React | @________ |
-| ------------ | Next.js y documentación | @________ |
+| Joustin Edgar Flores Vicente | Next.js y documentación | https://github.com/justin103103 |
 
 ## 6. Instalación y ejecución local
 
