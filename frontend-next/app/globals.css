@@ -12,7 +12,7 @@ nav {
   background: #333;
   padding: 12px 20px;
   display: flex;
-  gap: 20px;
+  gap: 30px;
 }
 
 nav a {
@@ -31,5 +31,5 @@ main {
 }
 
 .border {
-  border: 1px solid #000000 !important;
+  border: 2px solid #000000 !important;
 }
