@@ -11,8 +11,8 @@ export function AuthProvider({ children }) {
     const [cargando, setCargando] = useState(true);
 
     const cargarSesion = () => {
-       const tokenGuardado = localStorage.getItem("token");
-       const usuarioGuardado = localStorage.getItem("usuario");
+       const tokenGuardado = localStorage.getItem(TOKEN_KEY);
+       const usuarioGuardado = localStorage.getItem(USER_KEY);
 
        if (tokenGuardado && usuarioGuardado) {
            setToken(tokenGuardado);
@@ -33,15 +33,15 @@ export function AuthProvider({ children }) {
         setUsuario(datos.usuario);
 
         // guardamos la sesion en localStorage para que no se pierda al recargar
-        localStorage.setItem("token", datos.token);
-        localStorage.setItem("usuario", JSON.stringify(datos.usuario));
+        localStorage.setItem(TOKEN_KEY, datos.token);
+        localStorage.setItem(USER_KEY, JSON.stringify(datos.usuario));
     };
 
     const cerrarSesion = () => {
         setToken(null);
         setUsuario(null);
-        localStorage.removeItem("token");
-        localStorage.removeItem("usuario");
+        localStorage.removeItem(TOKEN_KEY);
+        localStorage.removeItem(USER_KEY);
     };
 
     return (
