@@ -1,6 +1,8 @@
-import { Routes, Route } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
+
 import Navbar from "./components/Navbar";
 import RutaProtegida from "./components/RutaProtegida";
+
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Cursos from "./pages/Cursos";
