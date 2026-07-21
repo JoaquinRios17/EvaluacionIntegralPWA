@@ -21,7 +21,7 @@ usuario desde un panel separado.
 
 ## 3. Arquitectura
 
-Ver el detalle y el diagrama en [`docs/arquitectura.md`](docs/arquitectura.md) y el modelo
+Detalle y el diagrama en [`docs/arquitectura.md`](docs/arquitectura.md) y el modelo
 de datos en [`docs/modelo-de-datos.md`](docs/modelo-de-datos.md).
 
 Resumen:
@@ -48,12 +48,15 @@ MongoDB Atlas     -> persistencia (users, courses, enrollments)       -> Atlas
 ## 5. Integrantes del equipo
 
 | Nombre completo | Rol / parte principal del proyecto | Usuario de GitHub |
+
 | Hector Joaquin Rios Hinostroza | Backend y seguridad | https://github.com/JoaquinRios17 |
-| | Panel Angular | @________ |
+
+| Ricardo Alejandro Gutierrez Ocampo|Panel Angular + Demo admin |https://github.com/Odisea2024-ops |
+
 | Santiago Reyes Medina | Portal React | https://github.com/wysson |
+
 | Joustin Edgar Flores Vicente | Next.js y documentación | https://github.com/justin103103 |
 
-| Ricardo Alejandro Gutierrez Ocampo|Panel Angular + Demo admin |https://github.com/Odisea2024-ops  |
 ## 6. Instalación y ejecución local
 
 Requisitos: Node.js 18+, cuenta de MongoDB Atlas (o Mongo local), 4 terminales (una por
