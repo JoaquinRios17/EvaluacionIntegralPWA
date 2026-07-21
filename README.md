@@ -52,6 +52,7 @@ MongoDB Atlas     -> persistencia (users, courses, enrollments)       -> Atlas
 | | Panel Angular | @________ |
 | Santiago Reyes Medina | Portal React | https://github.com/wysson |
 | Joustin Edgar Flores Vicente | Next.js y documentación | https://github.com/justin103103 |
+
 | Ricardo Alejandro Gutierrez Ocampo|Panel Angular + Demo admin |https://github.com/Odisea2024-ops  |
 ## 6. Instalación y ejecución local
 
