@@ -9,6 +9,18 @@ export function AuthProvider({ children }) {
     const [usuario, setUsuario] = useState(null);
     const [cargando, setCargando] = useState(true);
 
+    const cargarSesion = () => {
+       const tokenGuardado = localStorage.getItem("token");
+       const usuarioGuardado = localStorage.getItem("usuario");
+
+       if (tokenGuardado && usuarioGuardado) {
+           setToken(tokenGuardado);
+           setUsuario(JSON.parse(usuarioGuardado));
+    }
+
+    setCargando(false);
+    };
+
     // al abrir la app revisamos si ya hay una sesion guardada
     useEffect(() => {
         const tokenGuardado = localStorage.getItem("token");
