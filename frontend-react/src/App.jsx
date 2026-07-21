@@ -10,6 +10,13 @@ import DetalleCurso from "./pages/DetalleCurso";
 import MiCuenta from "./pages/MiCuenta";
 
 export default function App() {
+
+    const protegerRuta = (componente) => (
+        <RutaProtegida>
+            {componente}
+        </RutaProtegida>
+    );
+
     return (
         <>
             <Navbar></Navbar>
