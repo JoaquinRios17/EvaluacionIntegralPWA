@@ -19,22 +19,26 @@ export default function App() {
 
     return (
         <>
-            <Navbar></Navbar>
+            <Navbar />
+
             <Routes>
-                <Route path="/" element={<Home></Home>}></Route>
-                <Route path="/login" element={<Login></Login>}></Route>
+                <Route path="/" element={<Home />} />
+                <Route path="/login" element={<Login />} />
 
-                <Route path="/cursos" element={
-                    <RutaProtegida><Cursos></Cursos></RutaProtegida>
-                }></Route>
+                <Route
+                    path="/cursos"
+                    element={protegerRuta(<Cursos />)}
+                />
 
-                <Route path="/cursos/:id" element={
-                    <RutaProtegida><DetalleCurso></DetalleCurso></RutaProtegida>
-                }></Route>
+                <Route
+                    path="/cursos/:id"
+                    element={protegerRuta(<DetalleCurso />)}
+                />
 
-                <Route path="/mi-cuenta" element={
-                    <RutaProtegida><MiCuenta></MiCuenta></RutaProtegida>
-                }></Route>
+                <Route
+                    path="/mi-cuenta"
+                    element={protegerRuta(<MiCuenta />)}
+                />
             </Routes>
         </>
     );
