@@ -1,6 +1,7 @@
 import { createContext, useState, useContext, useEffect } from "react";
 import { iniciarSesionConApi } from "../api/authApi";
-
+const TOKEN_KEY = "token";
+const USER_KEY = "usuario";
 export const AuthContext = createContext();
 
 export function AuthProvider({ children }) {
