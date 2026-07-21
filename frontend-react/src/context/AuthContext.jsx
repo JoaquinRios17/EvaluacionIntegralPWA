@@ -5,8 +5,8 @@ export const AuthContext = createContext();
 
 export function AuthProvider({ children }) {
 
-    const [usuario, setUsuario] = useState(null);
     const [token, setToken] = useState(null);
+    const [usuario, setUsuario] = useState(null);
     const [cargando, setCargando] = useState(true);
 
     // al abrir la app revisamos si ya hay una sesion guardada
