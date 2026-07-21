@@ -4,21 +4,29 @@ import Saludo from "@/components/Saludo";
 export default function Home() {
   return (
     <main className="p-6">
-      <h1 className="text-2xl font-bold mb-2">Gestion de Cursos e Inscripciones</h1>
+      <section>
+        <h1 className="mb-2 text-2xl font-bold">
+          Gestión de Cursos e Inscripciones
+        </h1>
 
-      <Saludo nombre="estudiante"></Saludo>
+        <Saludo nombre="estudiante" />
 
-      <p className="mt-4">
-        Aqui puedes ver la oferta academica disponible sin necesidad de iniciar sesion.
-      </p>
-      <p className="mt-2">
-        Si ya eres estudiante, ingresa al portal del estudiante para inscribirte
-        en los cursos que te interesen.
-      </p>
+        <p className="mt-4">
+          Explora la oferta académica disponible sin necesidad de iniciar sesión.
+        </p>
 
-      <Link href="/cursos" className="inline-block mt-4 bg-slate-900 text-white px-4 py-2 rounded">
-        Ver catalogo de cursos
-      </Link>
+        <p className="mt-2">
+          Si ya formas parte de la institución, accede al portal del estudiante
+          para realizar tu inscripción en los cursos de tu interés.
+        </p>
+
+        <Link
+          href="/cursos"
+          className="mt-4 inline-block rounded bg-slate-900 px-4 py-2 text-white"
+        >
+          Ver catálogo de cursos
+        </Link>
+      </section>
     </main>
   );
 }
