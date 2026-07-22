@@ -161,7 +161,7 @@ Guía paso a paso para desplegar: [`docs/despliegue.md`](docs/despliegue.md).
 
 ## 12. Video de exposición
 
-Enlace de YouTube: 
+Enlace de YouTube: https://youtu.be/GvGGI2i7oAg?si=iyedbnuJiOyRcWn9
 
 ## 13. Estructura del repositorio
 
