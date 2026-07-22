@@ -1,26 +1,30 @@
 const mongoose = require("mongoose");
 
-const enrollmentSchema = new mongoose.Schema({
+const EnrollmentSchema = new mongoose.Schema(
+  {
     estudiante: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "User",
-        required: true
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
     },
     curso: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Course",
-        required: true
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Course",
+      required: true,
     },
     estado: {
-        type: String,
-        enum: ["inscrito", "retirado"],
-        default: "inscrito"
+      type: String,
+      default: "inscrito",
+      enum: ["inscrito", "retirado"],
     },
     fechaInscripcion: {
-        type: Date,
-        default: Date.now
-    }
-});
+      type: Date,
+      default: () => new Date(),
+    },
+  }
+);
+
+module.exports = mongoose.model("Enrollment", EnrollmentSchema);
 
 const Enrollment = mongoose.model("Enrollment", enrollmentSchema);
 
